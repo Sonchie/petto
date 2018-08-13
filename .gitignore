@@ -10,6 +10,7 @@ public/assets
 public/packs
 public/packs-test
 node_modules
+config/database.yml
 yarn-error.log
 .byebug_history
 .env*
