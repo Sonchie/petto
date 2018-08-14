@@ -1,2 +1,32 @@
-<h1>Pets#show</h1>
-<p>Find me in app/views/pets/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1><%= @pet.name %></h1>
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <h4>Description</h4>
+      <table class="table table-bordered">
+        <tbody>
+          <thead>
+            <th>Category : <%= @pet.category %></th>
+          </thead>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <table class="table table-bordered">
+        <tbody>
+          <thead>
+            <th>Gender : <%= @pet.gender %></th>
+          </thead>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+  <%= link_to "Back to all pets", root_path %>
