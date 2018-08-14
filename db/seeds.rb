@@ -5,29 +5,3 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-
-puts 'Creating pets...'
-Pet.create!({
-name: "clark",
-category: "Dog"
-})
-Pet.create!({
-name: "Cham",
-category: "Cat"
-})
-Pet.create!({
-name: "John",
-category: "Horse"
-})
-Pet.create!({
-name: "Pin",
-category: "Bird"
-})
-Pet.create!({
-name: "Kevin",
-category: "Pig"
-})
-
-
-puts 'Finished!'
