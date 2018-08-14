@@ -6,11 +6,10 @@ class PetsController < ApplicationController
   end
 
   def create
-    
+    Pet.create(pet_params)
   end
 
   def new
-    # raise
     @pet = Pet.new
     authorize(@pet)
     @user = current_user
@@ -29,10 +28,9 @@ class PetsController < ApplicationController
   def destroy
   end
 
-  private
-
+ private
+  
   def pet_params
-    params.require(:pet).permit(:name)
+    params.require(:pet).permit(:name, :category, :breed, :gender, :description, :price)
   end
-
 end
