@@ -12,6 +12,7 @@ class PetsController < ApplicationController
   end
 
   def show
+    @pet = Pet.find(params[:id])
   end
 
   def update
@@ -19,4 +20,11 @@ class PetsController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def pet_params
+    params.require(:pet).permit(:name)
+  end
+
 end
