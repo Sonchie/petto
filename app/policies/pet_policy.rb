@@ -4,8 +4,8 @@ class PetPolicy < ApplicationPolicy
     true
   end
 
-  def new?
-  	true
+  def create?
+    true
   end
 
   class Scope < Scope
