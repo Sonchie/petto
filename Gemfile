@@ -19,6 +19,7 @@ gem 'webpacker'
  # adding devise
 gem 'devise'
 gem 'faker'
+gem 'pundit'
 
 
 group :development do

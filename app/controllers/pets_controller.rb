@@ -1,13 +1,19 @@
 class PetsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @pets = Pet.all
+    @pets = policy_scope(Pet).all
   end
 
   def create
+    
   end
 
   def new
+    # raise
+    @pet = Pet.new
+    authorize(@pet)
+    @user = current_user
   end
 
   def edit
