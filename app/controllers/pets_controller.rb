@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-  before_action :set_pet, only: [:edit, :show, :update, :delete]
+  before_action :set_pet, only: [:edit, :show, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -40,6 +40,7 @@ class PetsController < ApplicationController
   end
 
   def destroy
+    authorize @pet
     @pet.destroy
     redirect_to pets_path
   end
