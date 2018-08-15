@@ -8,6 +8,14 @@ class PetPolicy < ApplicationPolicy
     true
   end
 
+  def update?
+    record.user == user
+  end
+
+  def delete?
+    record.user == user
+  end
+
   class Scope < Scope
     def resolve
      Pet.all
