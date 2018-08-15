@@ -1,4 +1,5 @@
 class PetsController < ApplicationController
+  before_action :set_pet, only: [:edit, :show, :update, :delete]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -22,21 +23,34 @@ class PetsController < ApplicationController
   end
 
   def edit
+    authorize @pet
   end
 
   def show
-    @pet = Pet.find(params[:id])
   end
 
   def update
+    if @pet.update(pet_params)
+      @pet.user = current_user
+      authorize @pet
+      redirect_to pet_path(@pet)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @pet.destroy
+    redirect_to pets_path
   end
 
  private
-  
+
   def pet_params
     params.require(:pet).permit(:name, :category, :breed, :gender, :description, :price)
+  end
+
+  def set_pet
+    @pet = Pet.find(params[:id])
   end
 end
