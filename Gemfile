@@ -21,6 +21,9 @@ gem 'devise'
 gem 'faker'
 gem 'pundit'
 
+# adding cloudinary for image upload
+gem 'cloudinary'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
