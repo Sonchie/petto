@@ -14,4 +14,3 @@ config/database.yml
 yarn-error.log
 .byebug_history
 .env*
-.env*

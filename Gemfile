@@ -21,6 +21,11 @@ gem 'devise'
 gem 'faker'
 gem 'pundit'
 
+# adding cloudinary for image upload
+gem 'cloudinary'
+# adding carrierwage for image modeling
+gem 'carrierwave', '~> 1.2'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
