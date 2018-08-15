@@ -1,4 +1,14 @@
-<h1>List a New Petto</h1>
 
-<%= render 'shared/form' %>
-<%= render 'shared/view_pet_image' %>
+<div class="wrapper-new">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <h3>List a New Petto</h3>
+        <%= render 'shared/form' %>
+      </div>
+    </div>
+  </div>
+  <div class="redirect-all-pets">
+   <%= link_to "Back to all pets", pets_path, class: 'btn btn-danger' %>
+  </div>
+</div>
