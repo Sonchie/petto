@@ -5,7 +5,7 @@
     </div>
   </div>
     <div class="row">
-    <div class="col-sm-12 col-md-6">
+    <div class="col-sm-4 col-sm-offset-4">
       <h4>Description</h4>
       <table class="table table-bordered">
         <tbody>
@@ -17,7 +17,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-12 col-md-6">
+    <div class="col-sm-4 col-sm-offset-4">
       <table class="table table-bordered">
         <tbody>
           <thead>
@@ -27,7 +27,19 @@
       </table>
     </div>
   </div>
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+        <tbody>
+          <thead>
+            <th><%= render 'shared/view_pet_image' %></th>
+          </thead>
+        </tbody>
+    </div>
+  </div>
+  <br>
+  <%= link_to "edit", edit_pet_path, class: 'btn btn-primary btn-lg' %>
 </div>
-<%= render 'shared/view_pet_image' %>
 
-  <%= link_to "Back to all pets", root_path %>
+  <br>
+
+  <%= link_to "Back to all pets", root_path, class: 'btn btn-danger btn' %>
