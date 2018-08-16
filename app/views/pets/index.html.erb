@@ -21,7 +21,7 @@
               <p><%= pet.breed %></p>
               <p><%= pet.gender %></p>
             </div>
-            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/bondichi">
+            <%= cl_image_tag pet.user.photo, class: "card-user" %>
           </div>
         <% end %>
         </div>
