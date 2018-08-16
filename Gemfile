@@ -16,6 +16,9 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+ # adding geocoderr
+gem "geocoder"
+
  # adding devise
 gem 'devise'
 gem 'faker'

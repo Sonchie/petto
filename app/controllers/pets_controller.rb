@@ -27,6 +27,16 @@ class PetsController < ApplicationController
   end
 
   def show
+    @pet = Pet.find(params[:id])
+    @pet_coordinates = { lat: @pet.latitude, lng: @pet.longitude }
+        @pets = Pet.where.not(latitude: nil, longitude: nil)
+
+    @markers = @pets.map do |pet|
+      {
+        lat: pet.latitude,
+        lng: pet.longitude
+      }
+    end
   end
 
   def update
