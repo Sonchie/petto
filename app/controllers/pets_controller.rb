@@ -27,6 +27,7 @@ class PetsController < ApplicationController
   end
 
   def show
+    # note before action at top.
   end
 
   def update
