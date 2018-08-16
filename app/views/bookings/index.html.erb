@@ -6,7 +6,7 @@
     <div class="row">
       <% @bookings.each do |booking| %>
       <div class="col-xs-12 col-sm-4">
-        <%=  link_to(pet) do %>
+        <%=  link_to booking do %>
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path booking.pet.photo%>)">
             <div class="card-category"></div>
             <div class="card-description">
@@ -19,5 +19,8 @@
         </div>
       <% end %>
     </div>
+  </div>
+  <div class="redirect-all-pets">
+    <%= link_to "Back to all pettos", pets_path, class: 'btn btn-warning' %>
   </div>
 </div>

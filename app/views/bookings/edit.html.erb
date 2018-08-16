@@ -1,2 +1,19 @@
-<h1>Bookings#edit</h1>
-<p>Find me in app/views/bookings/edit.html.erb</p>
+<div class="wrapper-new">
+  <div class="container">
+    <h2>Edit Your Booking</h2>
+    <h4><%=@booking.pet.name%></h4>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <%= cl_image_tag @booking.pet.photo, height: 300, width: 400, crop: :fill %>
+        <h4>Change dates or cancel your petto booking</h4>
+        <%= render 'shared/booking_form' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="redirect-all-pets">
+    <%= link_to "Back to all pettos", pets_path, class: 'btn btn-success' %>
+    <%= link_to "Back to all bookings", bookings_path, class: 'btn btn-primary' %>
+    <%= link_to "Cancel my booking", booking_path(@booking), :method => :delete, :confirm => "Are you sure?", class: 'btn btn-danger' %>
+  </div>
