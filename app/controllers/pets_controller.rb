@@ -28,7 +28,7 @@ class PetsController < ApplicationController
 
   def show
     @pet_coordinates = { lat: @pet.latitude, lng: @pet.longitude }
-        @pets = Pet.where.not(latitude: nil, longitude: nil)
+    @pets = Pet.where.not(latitude: nil, longitude: nil)
 
     @markers = @pets.map do |pet|
       {
@@ -42,7 +42,9 @@ class PetsController < ApplicationController
     if @pet.update(pet_params)
       @pet.user = current_user
       authorize @pet
+      # raise
       redirect_to pet_path(@pet)
+
     else
       render :edit
     end
@@ -57,7 +59,7 @@ class PetsController < ApplicationController
  private
 
   def pet_params
-    params.require(:pet).permit(:name, :category, :breed, :gender, :description, :price, :photo)
+    params.require(:pet).permit(:name, :category, :breed, :gender, :description, :price, :photo, :address, :latitude, :longitude)
   end
 
   def set_pet
