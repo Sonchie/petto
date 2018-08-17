@@ -9,8 +9,8 @@
 
     <% if user_signed_in? %>
       <!-- Links when logged in -->
-      <%= link_to "My Pettos", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "My Bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+    <%= link_to "My Bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -20,11 +20,6 @@
             <li>
               <%= link_to edit_user_registration_path do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
               <% end %>
             </li>
             <li>
