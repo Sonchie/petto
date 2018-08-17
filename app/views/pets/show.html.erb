@@ -1,58 +1,56 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <h1><%= @pet.name %></h1>
+<br>
+
+<div class="wrapper-show">
+  <div class="container-show">
+    <div class="title" style="text-align: center;">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="name"><%= @pet.name %></div>
+        </div>
+      </div>
     </div>
-  </div>
     <div class="row">
-    <div class="col-sm-4 col-sm-offset-4">
-      <h4>Description</h4>
-      <table class="table table-bordered">
-        <tbody>
-          <thead>
-            <th>Category : <%= @pet.category %></th>
-          </thead>
-        </tbody>
-      </table>
+      <div class="col-sm-6 col-sm-offset-3">
+        <table class="table table-bordered-show">
+          <tbody>
+            <thead>
+              <th>
+                <div class="description">
+                <br>
+                Category : <%= @pet.category %>
+                <br>
+                Gender : <%= @pet.gender %>
+                <br>
+                Breed : <%= @pet.breed %>
+                <br>
+                Description : <%= @pet.description %>
+                <br>
+                <br>
+                <%= render 'shared/view_pet_image' %>
+                </div>
+              </th>
+            </thead>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-4 col-sm-offset-4">
-      <table class="table table-bordered">
-        <tbody>
-          <thead>
-            <th>Gender : <%= @pet.gender %></th>
-          </thead>
-        </tbody>
-      </table>
+    <div class="map">
+    <div
+      id="map"
+      style="width: 50%;
+      height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+    ></div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-4 col-sm-offset-4">
-        <tbody>
-          <thead>
-            <th><%= render 'shared/view_pet_image' %></th>
-          </thead>
-        </tbody>
-    </div>
-  </div>
-   <!-- this is map -->
- <div class="map">
-  <div
-    id="map"
-    style="width: 100%;
-    height: 600px;"
-    data-markers="<%= @markers.to_json %>"
-  ></div>
-  </div>
-
-
-  <br>
-  <%= link_to "Edit your Petto", edit_pet_path, class: 'btn btn-primary btn-lg' %>
-  <%= link_to "Book this Petto", new_pet_booking_path(@pet), class: 'btn btn-success btn-lg' %>
-
 </div>
 
   <br>
+  <div class="container">
+  <%= link_to "Edit your Petto", edit_pet_path, class: 'btn btn-primary btn-lg' %>
+  <%= link_to "Book this Petto", new_pet_booking_path(@pet), class: 'btn btn-success btn-lg' %>
+  </div>
+  <br>
 
   <%= link_to "Back to all pettos", pets_path, class: 'btn btn-danger btn' %>
+
