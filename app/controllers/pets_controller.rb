@@ -3,7 +3,12 @@ class PetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @pets = policy_scope(Pet).all
+    # raise
+    if params[:query].present?
+      @pets = policy_scope(Pet).where(category: params[:query])
+    else
+      @pets = policy_scope(Pet).all
+    end
   end
 
   def create
@@ -59,7 +64,7 @@ class PetsController < ApplicationController
  private
 
   def pet_params
-    params.require(:pet).permit(:name, :category, :breed, :gender, :description, :price, :photo, :address, :latitude, :longitude)
+    params.require(:pet).permit(:name, :category, :breed, :gender, :description, :price, :photo, :address, :latitude, :longitude, :query)
   end
 
   def set_pet
