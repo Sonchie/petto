@@ -13,9 +13,9 @@
       </div>
       <div class="col-xs-12 col-sm-4">
         <%= form_tag pets_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
+          <%= select_tag :query,
+            options_for_select(Pet.pluck(:category).uniq),
+            class: "form-control", id: "category-dropdown",
             placeholder: "search by pet category"
           %>
         <% end %>

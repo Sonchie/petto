@@ -6,6 +6,7 @@ class PetsController < ApplicationController
     # raise
     if params[:query].present?
       @pets = policy_scope(Pet).where(category: params[:query])
+      @query = params[:query]
     else
       @pets = policy_scope(Pet).all
     end

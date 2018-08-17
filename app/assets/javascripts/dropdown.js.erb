@@ -1,0 +1,7 @@
+const dropDown = document.getElementById("category-dropdown");
+
+dropDown.value = "hello"
+dropDown.addEventListener('change', (event) => {
+	dropDown.parentElement.submit();
+});
+
