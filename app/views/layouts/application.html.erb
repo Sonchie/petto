@@ -11,19 +11,26 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+    <!-- This is the generic wrapper for the entire body including header, page content and footer -->
+    <div class="generic-page-wrapper">
+      <!-- This is the generic wrapper for header and page content Excludes footer-->
+      <div class="generic-page-wrapper-content">
 
-    <!-- navbar -->
-    <%= render 'shared/navbar' %>
+        <!-- navbar -->
+        <%= render 'shared/navbar' %>
 
-    <!-- alert ie sign in successful ribbon -->
-    <%= render 'shared/flashes' %>
+        <!-- alert ie sign in successful ribbon -->
+        <%= render 'shared/flashes' %>
 
 
 
-    <%= yield %>
-
-    <!-- footer -->
-    <%= render 'shared/footer' %>
+        <%= yield %>
+      </div>
+      <div class="generic-page-wrapper-footer">
+        <!-- footer -->
+        <%= render 'shared/footer' %>
+      </div>
+    </div>
    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
    <%= javascript_pack_tag "map" %>
 
